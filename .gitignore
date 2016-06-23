@@ -3,5 +3,5 @@ node_modules
 jspm_packages
 
 #Database files
-PingValue.db
-PingValue.db-journal
+PingValues.db
+PingValues.db-journal

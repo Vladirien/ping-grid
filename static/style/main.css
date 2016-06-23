@@ -1,0 +1,35 @@
+.ping-grid rect {
+  stroke: #55aaff;
+  stroke-width: 2px;
+}
+
+.chart text {
+  fill: black;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+.grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: #DDDDDD;
+}
+
+.ping-grid {
+  background-color: #EEEEEE;
+}
+
+body {
+  font-family: "Roboto Slab";
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

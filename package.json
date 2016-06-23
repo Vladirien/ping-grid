@@ -1,0 +1,13 @@
+{
+  "name": "PingGrid",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "A ping probe and network delay/stability visualization",
+  "dependencies": {
+    "body-parser": "1.15.1",
+    "express": "4.13.4",
+    "socket.io": "^1.4.6",
+    "sqlite3": "3.1.4",
+    "tcp-ping": "0.1.1"
+  }
+}
