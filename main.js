@@ -5,16 +5,7 @@ var tcpp = require('tcp-ping');
 var express= require("express");
 var model = require(__dirname + "/src/model.js");
 
-var config = {
-  HOSTS : [
-    {address : "google.com", port : 80},
-    {address : "twitter.com", port : 80},
-    {address : "soundcloud.com", port : 443}
-  ],
-  PORT : 3342,
-  PING_INTERVAL : 1000,  
-  TIMEOUT : 5000
-};
+var config = require(__dirname + "/serverConfig.json");
 
 var sockets = [];
 var pingValuesBuffer = [];
@@ -27,7 +18,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-//routes statiques
+//static routes
 app.use("/",express.static(__dirname + '/static', {'index': ['index.html']}));
 
 
@@ -41,7 +32,7 @@ app.get("/pingvalues",function (req, res) {
       res.send({code: 500, err : err});
     }else{
       res.statusCode=200;
-      data = data.concat(pingValuesBuffer);//also add values that are not yet in the base 
+      data = data.concat(pingValuesBuffer);//also add values that are not yet stored in the base 
       res.send({code: 200, data : data});
     }
     
@@ -94,11 +85,12 @@ io.on('connection', function(socket){
   })
 });
 
-
+//ping all hosts on some interval...
 setInterval(pingAllHosts,config.PING_INTERVAL);
+
+//but save data on db on a larger interval to reduce disk usage
 setInterval(addPingValuesInBuffer,config.PING_INTERVAL*10);
 
-//app.listen(config.PORT);
 http.listen(config.PORT, function(){
   console.log('app started');
 });

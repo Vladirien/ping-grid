@@ -1,0 +1,10 @@
+{
+  "HOSTS" : [
+    {"address" : "google.com", "port" : 80},
+    {"address" : "twitter.com", "port" : 80},
+    {"address" : "soundcloud.com", "port" : 443}
+  ],
+  "PORT" : 3342,
+  "PING_INTERVAL" : 1500,  
+  "TIMEOUT" : 5000
+}

@@ -1,13 +1,22 @@
 {
-  "name": "PingGrid",
+  "name": "ping-grid",
+  "author" : {
+    "name" : "Valentin FOURCHON",
+    "email" : "v.fourhcon@gmail.com"
+  },
   "version": "0.1.0",
+  "license" : "MIT",
   "main": "main.js",
-  "description": "A ping probe and network delay/stability visualization",
+  "description": "A network delay/stability visualization app",
   "dependencies": {
     "body-parser": "1.15.1",
     "express": "4.13.4",
     "socket.io": "^1.4.6",
     "sqlite3": "3.1.4",
     "tcp-ping": "0.1.1"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/Vladirien/ping-grid"
   }
 }
